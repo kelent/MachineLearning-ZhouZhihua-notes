@@ -100,15 +100,15 @@ def predict(X,beta):
 #sklearn
 
 
+def sklearn():
+      #split train set and test set
+      X_train, X_test, Y_train, Y_test=model_selection.train_test_split(X,Y,test_size=0.5,random_state=0)
 
-#split train set and test set
-X_train, X_test, Y_train, Y_test=model_selection.train_test_split(X,Y,test_size=0.5,random_state=0)
+      log_model=linear_model.LogisticRegression()
+      log_model.fit(X_train,Y_train)
 
-log_model=linear_model.LogisticRegression()
-log_model.fit(X_train,Y_train)
+      Y_pred=log_model.predict(X_test)
 
-Y_pred=log_model.predict(X_test)
-
-print(metrics.confusion_matrix(Y_test,Y_pred))
-print(metrics.classification_report(Y_test,Y_pred))
+      print(metrics.confusion_matrix(Y_test,Y_pred))
+      print(metrics.classification_report(Y_test,Y_pred))
 
