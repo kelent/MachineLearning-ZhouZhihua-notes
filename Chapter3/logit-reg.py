@@ -112,3 +112,6 @@ def sklearn():
       print(metrics.confusion_matrix(Y_test,Y_pred))
       print(metrics.classification_report(Y_test,Y_pred))
 
+
+if __name__=="__main__":
+      print(1)
